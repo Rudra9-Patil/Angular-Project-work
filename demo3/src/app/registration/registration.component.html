@@ -1,0 +1,42 @@
+<p>this is registration section</p>
+<div class="container">
+    <div class="col-md-6">
+<form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">First Name</label>
+      <input #fname="ngModel"type="email" name="fname" required minlength="6" maxlength="15" pattern="[a-zA-z]+$" class="form-control" aria-describedby="emailHelp" ngModel>
+      <span style="color: red;" *ngIf="fname.invalid && fname.touched">Enter a valid first Name</span>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Last Name</label>
+      <input #lname="ngModel"type="email" name="lname" required minlength="2" maxlength="15" pattern="[a-zA-z]+$" class="form-control" aria-describedby="emailHelp" ngModel>
+      <span style="color: red;" *ngIf="lname.invalid && lname.touched">Enter a valid last Name</span>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input #password="ngModel" type="password" required pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$' name="password" class="form-control"  ngModel> 
+      <span style="color: red;" *ngIf="password.invalid && password.touched">Enter a valid password</span>
+    </div>
+
+    <div class="form-group">
+      <div ngModelGroup="address">
+        <label>City</label>
+          <input type="text" name="city" placeholder="enter the city" class="form-control" #city="ngModel" required ngModel>
+      <span style="color: red;" *ngIf="city.invalid && city.touched">Enter city Name</span>
+          
+         <br>
+         <label>State</label>
+          <input type="text" name="state" placeholder="enter the state" class="form-control" #state="ngModel" required ngModel>
+      <span style="color: red;" *ngIf="state.invalid && state.touched">Enter state name</span>
+
+      </div>
+      </div>
+    
+    <button [disabled]="regForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+<h2>{{regForm.value|json}}</h2>

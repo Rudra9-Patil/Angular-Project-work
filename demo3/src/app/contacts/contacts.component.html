@@ -1,0 +1,75 @@
+<p>contacts works!</p>
+<h3>this is a reactive form</h3>
+<h4>{{contactForm.value|json}}</h4>
+<div class="container">
+    <div class="col-md-6">
+<form [formGroup]="contactForm" (ngSubmit)="contact()">
+
+    <div class="form-group">
+      <label for="exampleInputfirstName">First Name</label>
+      <input type="text" class="form-control" id="exampleInputfirstName" name="firstName" formControlName="firstName">
+<span style="color:red;" *ngIf="firstName?.invalid && firstName?.touched"> enter correct first Name</span>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputlastName">Last Name</label>
+      <input type="text" class="form-control" id="exampleInputlastName" name="lastName" formControlName="lastName">
+<span style="color: red;" *ngIf="lastName?.invalid && lastName?.touched">enter the correct last Name</span>
+   
+    </div>
+
+
+    <div>
+      <label>Gender</label>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          Female
+        </label>
+      </div>
+      
+    </div>
+<br>
+    <div class="form-group">
+        <div ngModelGroup="address">
+          <label>City</label>
+            <!-- <input type="text" placeholder="enter the city" class="form-control" name="city" formControlName="city"> -->
+            <select class="custom-select">
+              <option selected>select your city</option>
+              <option value="1">Dharwad</option>
+              <option value="2">Belagavi</option>
+              <option value="3">Bengaluru</option>
+              <option value="4">Mysore</option>
+              <option value="5">Mangalore</option>
+
+            </select>
+        <!-- <span style="color: red;" *ngIf="city?.invalid && city?.touched">Enter city Name</span> -->
+        
+            
+           <br> <br>
+           <label>Age</label>
+            <input type="text" placeholder="enter the Age" class="form-control" name="state"  formControlName="state" >
+        <span style="color: red;" *ngIf="state?.invalid && state?.touched">Enter your correcr Age</span>
+  
+        </div>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check" formControlName="check">
+            <label class="form-check-label" for="exampleCheck1" >Check me out</label>
+        <span style="color: red;" *ngIf="check?.invalid">please select the checkbox</span>
+
+          </div>
+      
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>

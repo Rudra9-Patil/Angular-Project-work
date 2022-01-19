@@ -1,0 +1,60 @@
+<h3>Angular class</h3>
+
+<!-- interpolation -->
+<p>{{2+3}}</p>
+<h3>{{val}}</h3>
+<input type="" name="" value={{val}}>
+ <br>
+ <br>
+
+<!-- property binding -->
+<input type="text" [value]="val">
+
+<!-- style binding -->
+<h3 [style.color]="isSpecial?c1:c2">Data binding</h3>
+
+<!-- class binding -->
+<p [class]="isSpecial?'para1':'para2'">class binding</p>
+<!-- attribute binding -->
+<table border="solid 1px">
+  <tr>
+    <th [attr.colspan]="colVal">person</th>
+  </tr>
+
+  <tr>
+    <td>Virat</td>
+    <td>kohli</td>
+  </tr>
+  <tr>
+    <td>Rohit</td>
+    <td>sharma</td>
+  </tr>
+</table>
+<br>
+
+<button (click)="display()">click me!</button>
+<br>
+<!-- two way binding -->
+<input type="text" [(ngModel)]="displayResult" >
+<h3>{{displayResult}}</h3>
+<app-login [valueChild]="val"></app-login>
+  <app-parent>
+    
+  </app-parent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
