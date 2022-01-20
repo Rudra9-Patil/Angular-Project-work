@@ -1,0 +1,24 @@
+<p>parent works!</p>
+<app-child [products]="fruitsProducts">
+    <h3 class="header">fruits products</h3>
+    <a class="link" href="#">Go to other section</a>
+</app-child>
+
+<!-- *ngIf -->
+<h3 *ngIf="displayName;else elseBlock">Rudragouda</h3>
+
+<ng-template #elseBlock>
+    
+    <h3>
+        name is hidden
+        </h3>
+</ng-template>
+
+<!--ngSwitch  -->
+<!-- <div [*ngSwitch]='color'>
+    <div *ngSwitchCase="'red'">this is red color</div>
+    <div *ngSwitchCase="'white'">this is red color</div>
+    <div *ngSwitchCase="'black'">this is red color</div>
+    <div *ngSwitchDefault>enter a correct color </div>
+
+</div> -->

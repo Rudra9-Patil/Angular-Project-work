@@ -1,0 +1,35 @@
+<h3>Binding Assignment</h3>
+<!-- Interpolation -->
+<h3>My Name is {{val}}</h3>
+<input type="text" value="{{val}}"> <br> <br>
+
+<!-- propertyBinding -->
+<input type="text" [value]="val">
+<!-- need for property binding over interpolation for boolean -->
+<input type="text" [disabled]="isDisabled"> 
+
+<!-- class binding -->
+<h3 class="text-danger">Technoelevate</h3>
+<h3 [class]="successClass">hello good morning</h3>
+
+<!-- style binding -->
+<h3 [style.color]="isSpecial?c1:c2">Test yantra</h3>
+<h3 [style.fontStyle]="'italic'">satish dharwad</h3>
+<h3 [ngStyle]="titleStyle"> style 3</h3>
+
+<!-- event binding -->
+<button (click)="onClick($event)">greet</button> <br> <br>
+{{greeting}}
+<button (click)="greeting='welcome rudra'">greet</button> <br> <br>
+<!-- reference variable -->
+<input #myInput type="text"> 
+<button (click)="logMessage(myInput.value)">log</button> <br> <br>
+
+<!-- two way binding -->
+<input   [(ngModel)]="name"  type="text">
+{{name}}
+
+<!-- parent to child transfer -->
+<app-login [valueChild]="titleStyle.color">
+  
+</app-login>

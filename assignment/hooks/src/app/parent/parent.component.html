@@ -1,0 +1,15 @@
+<p>parent works!</p>
+
+<button (click)="toggleChild()">Toggle Child</button> <br> <br>
+<input type="text"[(ngModel)]="value">
+{{value}}
+
+
+<app-child *ngIf="flag" [value]="value">
+    <h3 #cHeader>Technoelevate</h3>
+</app-child>
+
+<div>
+    <h3 #value3>Rudragouda patil</h3>
+    <p #value3>kiran</p>
+</div>
